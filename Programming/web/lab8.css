@@ -1,0 +1,28 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: blanchedalmond;
+}
+
+#todoList {
+    max-width: 400px;
+    margin: 0 auto;
+    color: rgb(0, 82, 56);
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+button:hover{
+    color: crimson;
+    transform: translate(10px, 0);
+}
+
+#taskInput:hover{
+    background-color: rgb(255, 182, 182);
+}
+

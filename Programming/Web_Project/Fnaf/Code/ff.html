@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FNAF Fan Page</title>
+    <link rel="icon" type="image/x-icon" href="/Web_Project/Fnaf/Images/images.jpg">
+    <style>
+        body {
+            background-image: url('/Web_Project/Fnaf/Images/ULTIMATE_GROUP.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+            background-color: #000;
+            color: #ffffff;
+            font-family: 'Creepster', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }  
+
+        header {
+            background-color: #111;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff4500;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .container::before,
+        .game-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(5px); 
+            z-index: -1; 
+        }
+
+        .container,
+        .game-box{
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .container div {
+            width: 80%;
+            max-width: 800px;
+            border: 4px solid #ff4500;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #111;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2; 
+        }
+        
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+        }
+
+        .game-box {
+            flex: 1;
+            margin: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .game-box a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .game-box img {
+            max-width: 100%;
+            border-radius: 8px;
+            height: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                background-size: cover; 
+            }
+            
+            header {
+                padding: 10px;
+            }
+        
+            h1 {
+                font-size: 1.5em;
+            }
+        
+            nav a {
+                margin: 0 10px;
+            }
+        
+            .container div {
+                width: 95%;
+            }
+        
+            .game-box {
+                flex: 1;
+                margin: 10px;
+                box-sizing: border-box;
+            }
+        
+            .game-box img {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+
+            #div2 {
+                flex-direction: column;
+            }
+
+            .game-box img,
+            #div2 img { 
+                max-width: 100%;
+                height: auto;
+            }
+
+            footer {
+                padding: 5px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="loadPage('ff.html')">Home</a>
+        <a href="#" onclick="loadPage('ff1.html')">Wiki</a>
+    </nav>
+
+    <header>
+        <h1>Five Nights at Freddy's Wiki</h1>
+    </header>
+
+    <div class="container">
+        <div id="div1">
+            <img src="/Web_Project/Fnaf/Images/FNaFWiki-mainpage-welcome.webp" alt="FNAF Wiki Image" style="width: 100%; border-radius: 8px;">
+            <p>
+                Welcome to the Five Nights at Freddy's Wiki, the comprehensive encyclopedia site about Five Nights at Freddy's, a media franchise based around an indie point-and-click horror video game series created by Scott Cawthon. The series is centered on the universe of various fictional restaurant chains (pastiches of real-life restaurants such as Chuck E. Cheese's and ShowBiz Pizza Place) hosted by the Fazbear Entertainment company. Join the collaborative community to detect recent information and announcements with us freely.
+            </p>
+    </div>
+
+    <div id="div2" style="border: 4px solid #ff4500; border-radius: 8px; padding: 20px; margin-top: 20px; display: flex;">
+        <div style="text-align: left; border: none; padding: 0; flex: 1;">
+            <h2 style="color: #ff4500;">CAN YOU SURVIVE?</h2>
+            <p>
+                The terrifying horror game phenomenon becomes a blood-chilling cinematic event, as Blumhouse brings Five Nights at Freddy's to the big screen. The film follows Mike (Josh Hutcherson) a troubled young man caring for his 10-year-old sister Abby (Piper Rubio), and haunted by the unsolved disappearance of his younger brother more than a decade before.
+            </p>
+            <p>
+                Recently fired and desperate for work so that he can keep custody of Abby, Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But Mike soon discovers that nothing at Freddy's is what it seems. With the aid of Vanessa, a local police officer (Elizabeth Lail), Mike's nights at Freddy's will lead him into unexplainable encounters with the supernatural and drag him into the black heart of an unspeakable nightmare.
+            </p>
+            <p>
+                The film also stars Mary Stuart Masterson, as Mike's icy Aunt Jane; Kat Conner Sterling as Abby's caring babysitter, Max; and Matthew Lillard as Steve Raglan, Mike’s smug career counselor.
+            </p>
+            <p>
+                Five Nights at Freddy's is directed by Emma Tammi and is written by Scott Cawthon, Emma Tammi, and Seth Cuddeback. The film's iconic animatronic characters are created by Jim Henson's Creature Shop.
+            </p>
+        </div>
+        <img src="/Web_Project/Fnaf/Images/FNaFMovie_poster2.webp" alt="FNAF Movie Image" style="margin-top: 90px; margin-bottom: 200px; height: 50%; max-width: 100%;">
+    </div>
+    
+    
+    <div id="div3" style="border: 4px solid #ff4500; border-radius: 8px; padding: 20px; margin-top: 20px; display: flex; flex-wrap: wrap;">
+        <div class="game-box">
+            <img src="/Web_Project/Fnaf/Images/FNaF1.webp" alt="Game 1" style="width: 100%; border-radius: 8px;">
+            <p><a href="Five Nights at Freddy's 1.html">Five Nights at Freddy's 1</a></p>
+        </div>
+        <div class="game-box">
+            <img src="/Web_Project/Fnaf/Images/FNAF_2_picture.webp" alt="Game 2" style="width: 100%; border-radius: 8px;">
+            <p>Five Nights at Freddy's 2</p>
+        </div>
+        <div class="game-box">
+            <img src="/Web_Project/Fnaf/Images/FNaF3_Steam_Greenlight_Icon.webp" alt="Game 3" style="width: 100%; border-radius: 8px;">
+            <p>Five Nights at Freddy's 3</p>
+        </div>
+        <div class="game-box">
+            <img src="/Web_Project/Fnaf/Images/Fnaf_4_desktop_icon.webp" alt="Game 4" style="width: 100%; border-radius: 8px;">
+            <p>Five Nights at Freddy's 4</p>
+        </div>
+        <div class="game-box">
+            <img src="/Web_Project/Fnaf/Images/FFPS_Steam_Header.webp" alt="Game 5" style="width: 100%; border-radius: 8px;">
+            <p>Freddy Fazbear's Pizzeria Simulator</p>
+        </div>
+        <div class="game-box">
+            <img src="/Web_Project/Fnaf/Images/UCN-header.webp" alt="Game 6" style="width: 100%; border-radius: 8px;">
+            <p>Ultimate Custom Night</p>
+        </div>
+        <div class="game-box">
+            <img src="/Web_Project/Fnaf/Images/FNAF_HW2_Cover.webp" alt="Game 7" style="width: 100%; border-radius: 8px;">
+            <p>Help Wanted</p>
+        </div>
+        <div class="game-box">
+            <img src="/Web_Project/Fnaf/Images/Security_breach_poster.webp" alt="Game 8" style="width: 100%; border-radius: 8px;">
+            <p>Security Breach</p>
+        </div>
+    </div>
+    
+    </div>
+
+    <footer>
+        <p>&copy; 2023 FNAF Fan Page</p>
+    </footer>
+
+    <script>
+        function loadPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

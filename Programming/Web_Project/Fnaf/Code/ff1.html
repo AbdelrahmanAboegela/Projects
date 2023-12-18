@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FNAF Wiki</title>
+    <link rel="icon" type="image/x-icon" href="/Web_Project/Fnaf/Images/images.jpg">
+    <style>
+        body {
+            background-image: url('/Web_Project/Fnaf/Images/ULTIMATE_GROUP.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+            background-color: #000;
+            color: #ffffff;
+            font-family: 'Creepster', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            color: #ff4500;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+        }
+
+        .characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .character-box {
+            padding: 20px;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .character-box a {
+            color: #ff4500;
+            text-decoration: none;
+        }
+
+        .character-box a:hover {
+            text-decoration: underline;
+        }
+
+        .characters,
+        .character-box {
+            animation: fadeIn 1.5s ease-in-out;
+        }   
+
+        h2 {
+            color: #ff4500;
+        }
+
+        p {
+            max-width: 600px;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #fff;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .characters {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="ff.html">Home</a>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Wiki</a>
+            <div class="dropdown-content">
+                <a href="Springtrap.html">Springtrap</a>
+                <a href="Chica.html">Chica</a>
+                <a href="Foxy.html">Foxy</a>
+                <a href="Bonnie.html">Bonnie</a>
+                <a href="Freddy.html">Freddy</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Most Famous Characters</h1>
+    </header>
+
+    <section class="characters">
+        <div class="character-box">
+            <h2><a href="Springtrap.html">Springtrap</a></h2>
+            <p>
+                Springtrap is one of the main antagonists in the Five Nights at Freddy's series. Originally known as Spring Bonnie, this animatronic served as an entertainer at Freddy Fazbear's Pizza. However, after the tragic events of the past, it became possessed by the vengeful spirit of William Afton.
+            </p>
+        </div>
+
+        <div class="character-box">
+            <h2><a href="Chica.html">Chica</a></h2>
+            <p>
+                Chica is another animatronic character in the Five Nights at Freddy's series. Originally designed as a chicken entertainer, Chica is part of the ensemble of animatronics at Freddy Fazbear's Pizza. Chica has a distinctive appearance with its yellow feathers and a cupcake in hand.
+            </p>
+        </div>
+
+        <div class="character-box">
+            <h2><a href="Foxy.html">Foxy</a></h2>
+            <p>
+                Foxy, the pirate fox animatronic, is known for its aggressive behavior and unique design. Foxy is one of the attractions at Freddy Fazbear's Pizza, and its origin story involves its role as an entertainer for children.
+            </p>
+        </div>
+
+        <div class="character-box">
+            <h2><a href="Bonnie.html">Bonnie</a></h2>
+            <p>
+                Bonnie is a blue animatronic rabbit that is part of the animatronic band at Freddy Fazbear's Pizza. With its guitar in hand, Bonnie adds to the musical and entertaining aspect of the pizzeria.
+            </p>
+        </div>
+
+        <div class="character-box">
+            <h2><a href="Freddy.html">Freddy</a></h2>
+            <p>
+                Freddy Fazbear, the main mascot of Freddy Fazbear's Pizza, is a brown animatronic bear. Freddy serves as the leader of the animatronic band and is a central character in the FNAF series.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 FNAF Fan Page</p>
+    </footer>
+</body>
+</html>

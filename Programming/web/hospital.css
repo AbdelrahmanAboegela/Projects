@@ -1,0 +1,230 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    }
+    
+    /* Header styles */
+    header {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    header a {
+    color: #ffffff;
+    text-decoration: none;
+    }
+    
+    header a:hover {
+    text-decoration: underline;
+    }
+    
+    .social-icons {
+    display: flex;
+    }
+    
+    .social-icons li {
+    list-style: none;
+    margin-left: 20px;
+    position: relative;
+    }
+    
+    .social-icons li a {
+    color: #ffffff;
+    text-decoration: none;
+    }
+    
+    .social-icons li a:hover:before {
+    content: attr(title);
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -30px;
+    left: -10px;
+    z-index: 1;
+    }
+    
+    /* Navigation styles */
+    nav {
+    background-color: #ffffff;
+    color: #ff0000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ff0000;
+    }
+    
+    nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    }
+    
+    nav li {
+    margin-left: 20px;
+    }
+    
+    nav a {
+    color: #ff0000;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    }
+    
+    nav a:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    }
+    
+    /* Main styles */
+    main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    }
+    
+    /* Sidebar styles */
+    .sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #ff0000;
+    flex: 0 0 25%;
+    padding: 20px;
+    }
+    
+    .sidebar h2 {
+    color: #ff0000;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    }
+    
+    .sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .sidebar li {
+    margin-bottom: 10px;
+    }
+    
+    .sidebar a {
+    color: #ff0000;
+    text-decoration: none;
+    }
+    
+    .sidebar a:hover {
+    text-decoration: underline;
+    }
+    
+    /* Content styles */
+    .content {
+    flex: 0 0 70%;
+    }
+    
+    .content h1 {
+    color: #ff0000;
+    font-size: 32px;
+    margin-top: 0;
+    }
+    
+    /* Login/Register form styles */
+    form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    margin: 20px 0;
+    }
+    
+    form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+    
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  form input[type="submit"] {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #ffffff;
+    color: #ff0000;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .social-icons {
+      margin-top: 20px;
+    }
+    
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    nav li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+    
+    .sidebar {
+      flex: 0 0 100%;
+      border-right: none;
+      border-bottom: 1px solid #ff0000;
+    }
+    
+    .content {
+      flex: 0 0 100%;
+    }
+  }

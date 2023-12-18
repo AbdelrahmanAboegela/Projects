@@ -1,0 +1,14 @@
+body{
+    background-color: aqua;
+}
+h1{
+    color: rgb(0, 255, 170);
+    background-color: black;
+    text-align: center;
+}
+h3{
+    color: blueviolet;
+    background-color: black;
+    text-align: center;
+    width: 300px;
+}
