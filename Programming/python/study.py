@@ -76,22 +76,22 @@
 
 
 
-import threading
-event = threading.Event()
-def worker1():
-    print("Worker 1 started\n")
-    event.wait()
-    print("Worker 1 completed\n")
+# import threading
+# event = threading.Event()
+# def worker1():
+#     print("Worker 1 started\n")
+#     event.wait()
+#     print("Worker 1 completed\n")
 
-def worker2():
-    print("Worker 2 started\n")
-    threading.Timer(3, event.set).start()
-    print("Worker 2 completed\n")
+# def worker2():
+#     print("Worker 2 started\n")
+#     threading.Timer(3, event.set).start()
+#     print("Worker 2 completed\n")
 
-if __name__ == "__main__":
-    t1 = threading.Thread(target=worker1)
-    t2 = threading.Thread(target=worker2)
-    t1.start()
-    t2.start()
-    t1.join()
-    t2.join()
+# if __name__ == "__main__":
+#     t1 = threading.Thread(target=worker1)
+#     t2 = threading.Thread(target=worker2)
+#     t1.start()
+#     t2.start()
+#     t1.join()
+#     t2.join()
