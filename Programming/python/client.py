@@ -1,65 +1,73 @@
-import socket
-import threading
 import tkinter as tk
-from tkinter import scrolledtext, simpledialog
+from tkinter import ttk
+import socket
 
-def create_new_user_window():
-    username = simpledialog.askstring("Username", "Enter your username:")
-    if username:
-        client = ChatClient(username)
-        client.root.mainloop()
+def send_request():
+    operation = operation_var.get()
+    message = message_entry.get()
+    key = int(key_entry.get())
 
-class ChatClient:
-    def __init__(self, username):
-        self.username = username
-        self.root = tk.Tk()
-        self.root.title(f"Chat Room - {self.username}")
+    if operation not in ['encrypt', 'decrypt']:
+        result_var.set("Invalid operation.")
+        return
 
-        self.messages_text_area = scrolledtext.ScrolledText(self.root)
-        self.messages_text_area.pack(padx=10, pady=10, expand=True, fill=tk.BOTH)
+    host = '127.0.0.1'
+    port = 5555
 
-        self.entry_text_area = scrolledtext.ScrolledText(self.root)
-        self.entry_text_area.pack(padx=10, pady=10, expand=True, fill=tk.BOTH)
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
+        try:
+            client_socket.connect((host, port))
+            request = f"{operation},{message},{key}"
+            client_socket.send(request.encode())
+            response = client_socket.recv(1024).decode()
+            result_var.set(response)
+        except ConnectionRefusedError:
+            result_var.set("Connection refused. Server is not running.")
 
-        send_button = tk.Button(self.root, text="Send", command=self.send)
-        send_button.pack(padx=10, pady=10)
-
-        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.client_socket.connect(("localhost", 9999))
-
-        receive_thread = threading.Thread(target=self.receive)
-        receive_thread.daemon = True
-        receive_thread.start()
-
-        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
-
-    def receive(self):
-        while True:
-            try:
-                message = self.client_socket.recv(1024).decode()
-                self.messages_text_area.insert(tk.END, message + "\n")
-            except:
-                print("An error occurred while receiving messages.")
-                break
-
-    def send(self):
-        message = self.entry_text_area.get("1.0", tk.END).strip()
-        if message:
-            try:
-                self.client_socket.send(f"{self.username}: {message}".encode())
-            except:
-                print("An error occurred while sending the message.")
-            self.entry_text_area.delete("1.0", tk.END)
-
-    def on_closing(self):
-        self.client_socket.send("/quit".encode())
-        self.client_socket.close()
-        self.root.destroy()
-
+# Create main window
 root = tk.Tk()
-root.title("Main Window")
+root.title("Message Encryptor/Decryptor")
 
-create_button = tk.Button(root, text="Create New User Window", command=create_new_user_window)
-create_button.pack(padx=10, pady=10)
+# Frame for message input and operation selection
+input_frame = ttk.Frame(root, padding="20")
+input_frame.pack()
+
+ttk.Label(input_frame, text="Message:").grid(row=0, column=0, sticky="w")
+message_entry = ttk.Entry(input_frame, width=40)
+message_entry.grid(row=0, column=1, padx=10)
+
+ttk.Label(input_frame, text="Key (integer):").grid(row=1, column=0, sticky="w")
+key_entry = ttk.Entry(input_frame, width=10)
+key_entry.grid(row=1, column=1, padx=10)
+
+operation_var = tk.StringVar()
+operation_var.set("encrypt")  # Default operation is encryption
+
+ttk.Radiobutton(input_frame, text="Encrypt", variable=operation_var, value="encrypt").grid(row=2, column=0, sticky="w")
+ttk.Radiobutton(input_frame, text="Decrypt", variable=operation_var, value="decrypt").grid(row=2, column=1, sticky="w")
+
+# Button to send request
+send_button = ttk.Button(input_frame, text="Process", command=send_request)
+send_button.grid(row=3, columnspan=2, pady=20)
+
+# Frame for displaying result
+result_frame = ttk.Frame(root, padding="20")
+result_frame.pack()
+
+ttk.Label(result_frame, text="Original Message:").grid(row=0, column=0, sticky="w")
+original_display = ttk.Label(result_frame, text="", wraplength=400)
+original_display.grid(row=0, column=1, padx=10)
+
+ttk.Label(result_frame, text="Processed Message:").grid(row=1, column=0, sticky="w")
+processed_display = ttk.Label(result_frame, text="", wraplength=400)
+processed_display.grid(row=1, column=1, padx=10)
+
+result_var = tk.StringVar()
+
+def update_result_display():
+    original_display.config(text=message_entry.get())
+    processed_display.config(text=result_var.get())
+
+result_var.trace_add("write", lambda *args: update_result_display())
 
 root.mainloop()
